@@ -3,10 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
+import { CategoriaComponent } from './categoria/categoria.component';
+import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
+import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+    MenuComponent,
+    HomeComponent,
+    CategoriaComponent,
+    CategoriaListarComponent,
+    CategoriaFormComponent
   ],
   imports: [
     BrowserModule,
