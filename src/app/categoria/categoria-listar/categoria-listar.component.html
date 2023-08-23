@@ -1,31 +1,20 @@
 <!-- Recent Sales -->
-<div class="titulo">
-  <h2>Categoria</h2>
-</div>
-<div class="cabecalho">
-  <div style="float: right;">
-    <button type="button" class="btn btn-primary" >
-      Novo
-    </button>
+<div class="card">
+  <div class="card-body"  >
+
+  </div>
+  <div class="card-body" id="cabecalho">
+    <h2 style="float: left;" id="titulo">Categoria</h2>
+    <div style="float: right;">
+      <button type="button" class="btn btn-primary" routerLink="../form">
+        Novo
+      </button>
+    </div>
   </div>
 </div>
-<br />
-<div class="col-12" style="margin-top: 20px;">
+<div class="col-12" >
     <div class="card recent-sales overflow-auto">
-      <div class="filter">
-        <a class="icon" href="#" data-bs-toggle="dropdown"
-          ><i class="bi bi-three-dots"></i
-        ></a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-          <li class="dropdown-header text-start">
-            <h6>Filter</h6>
-          </li>
 
-          <li><a class="dropdown-item" href="#">Today</a></li>
-          <li><a class="dropdown-item" href="#">This Month</a></li>
-          <li><a class="dropdown-item" href="#">This Year</a></li>
-        </ul>
-      </div>
       <div class="card-body">
         <table class="table table-borderless datatable">
           <thead align="center">
@@ -49,7 +38,7 @@
               <th scope="row"><a href="#">#2147</a></th>
               <td>Masculina</td>
               <td>
-                <i class="bi bi-pencil-square" id="editar"></i>
+                <i class="bi bi-pencil-square" id="editar" ></i>
               </td>
               <i class="bi bi-x-circle-fill" id="excluir"></i>
             </tr>

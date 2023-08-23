@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   { path:'categoria',component:CategoriaComponent,
   children:[
-    {path:'', component:CategoriaListarComponent},
+    {path:'', redirectTo:'listar',pathMatch:'full'},
     {path:'listar', component:CategoriaListarComponent},
     {path:'form',component:CategoriaFormComponent}
 
