@@ -1,17 +1,13 @@
  <!-- Multi Columns Form -->
  <div class="card">
-  <form class="descricao" style="margin: 10%;">
+  <form class="descricao" style="margin: 10%;" id="descricao" >
     <div class="descricao">
-      <label for="inputName5" class="form-label">Descrição</label>
-      <input type="text" class="form-control" id="inputName5" >
+      <label for="descricao" class="form-label">Descrição</label>
+      <input type="text" class="form-control" id="descricao" [(ngModel)]="descricao" name="descricao">
     </div>
 
-    <div class="tipo">
-      <label for="inputAddress5" class="form-label">Tipo</label>
-      <input type="text" class="form-control" id="inputAddres5s">
-    </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary" style="margin: 10px;">Salvar</button>
+      <button type="submit" class="btn btn-primary" style="margin: 10px;" (click)="salvar()">Salvar</button>
       <button type="button" class="btn btn-danger" routerLink="../listar">Cancelar</button>
     </div>
   </form><!-- End Multi Columns Form -->

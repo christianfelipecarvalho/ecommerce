@@ -26,46 +26,15 @@
             </tr>
           </thead>
           <tbody align="center">
-            <tr>
-              <th scope="row"><a href="#">#2457</a></th>
-              <td>Feminina</td>
+            <tr *ngFor="let Categoria of dados">
+              <th scope="row"><a href="#">#1</a></th>
+              <td>{{ Categoria.descricao }}</td>
               <td>
                 <i class="bi bi-pencil-square" id="editar"></i>
               </td>
               <i class="bi bi-x-circle-fill" id="excluir"></i>
             </tr>
-            <tr>
-              <th scope="row"><a href="#">#2147</a></th>
-              <td>Masculina</td>
-              <td>
-                <i class="bi bi-pencil-square" id="editar" ></i>
-              </td>
-              <i class="bi bi-x-circle-fill" id="excluir"></i>
-            </tr>
-            <tr>
-              <th scope="row"><a href="#">#2049</a></th>
-              <td>Infantil</td>
-              <td>
-                <i class="bi bi-pencil-square" id="editar"></i>
-              </td>
-              <i class="bi bi-x-circle-fill" id="excluir"></i>
-            </tr>
-            <tr>
-              <th scope="row"><a href="#">#2644</a></th>
-              <td>Cama</td>
-              <td>
-                <i class="bi bi-pencil-square" id="editar"></i>
-              </td>
-              <i class="bi bi-x-circle-fill" id="excluir"></i>
-            </tr>
-            <tr>
-              <th scope="row"><a href="#">#2644</a></th>
-              <td>Perfurmaria</td>
-              <td>
-                <i class="bi bi-pencil-square" id="editar"></i>
-              </td>
-              <i class="bi bi-x-circle-fill" id="excluir"></i>
-            </tr>
+
           </tbody>
         </table>
       </div>
