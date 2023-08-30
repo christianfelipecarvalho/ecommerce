@@ -26,13 +26,13 @@
             </tr>
           </thead>
           <tbody align="center">
-            <tr *ngFor="let Categoria of dados">
+            <tr *ngFor="let Categoria of dados;">
               <th scope="row"><a href="#">#1</a></th>
               <td>{{ Categoria.descricao }}</td>
               <td>
-                <i class="bi bi-pencil-square" id="editar"></i>
+                <i class="bi bi-pencil-square" id="editar" (click)="editar(Categoria.indice)"></i>
               </td>
-              <i class="bi bi-x-circle-fill" id="excluir"></i>
+              <i class="bi bi-x-circle-fill" id="excluir" (click)="excluir(Categoria.indice)"></i>
             </tr>
 
           </tbody>

@@ -21,4 +21,19 @@ export class CategoriaService {
   listar(){
     return this.ref();
   }
+
+  excluir (indice:any){
+    this
+    .ref()
+    .child('/' +indice)
+    .remove()
+    .then();
+  }
+
+  editar(indice:string, dados:any){
+    this.ref()
+    .child('/' + indice)
+    .update(dados)
+    .then();
+  }
 }

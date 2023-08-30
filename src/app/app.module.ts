@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
@@ -38,7 +39,8 @@ import { MenuComponent } from './menu/menu.component';
       measurementId: "G-N40NE4GSD7"
     }),
     AngularFireStorageModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
