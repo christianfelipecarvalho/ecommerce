@@ -1,0 +1,43 @@
+<!-- Recent Sales -->
+<div class="card">
+  <div class="card-body"  >
+
+  </div>
+  <div class="card-body" id="cabecalho">
+    <h2 style="float: left;" id="titulo">Forma de pagamento</h2>
+    <div style="float: right;">
+      <button type="button" class="btn btn-primary" routerLink="../form">
+        Novo
+      </button>
+    </div>
+  </div>
+</div>
+<div class="col-12" >
+    <div class="card recent-sales overflow-auto">
+
+      <div class="card-body">
+        <table class="table table-borderless datatable">
+          <thead align="center">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Excluir</th>
+            </tr>
+          </thead>
+          <tbody align="center">
+            <tr *ngFor="let formapagamento of dados;">
+              <th scope="row"><a href="#">#1</a></th>
+              <td>{{formapagamento.descricao}}</td>
+              <td>
+                <i class="bi bi-pencil-square" id="editar" (click)="editar(formapagamento.indice)"></i>
+              </td>
+              <i class="bi bi-x-circle-fill" id="excluir" (click)="excluir(formapagamento.indice)"></i>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+<!-- End Recent Sales -->

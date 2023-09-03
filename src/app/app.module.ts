@@ -14,6 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
+import { FormaPagamentoComponent } from './forma-pagamento/forma-pagamento.component';
+import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
+import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { MenuComponent } from './menu/menu.component';
     HomeComponent,
     CategoriaComponent,
     CategoriaListarComponent,
-    CategoriaFormComponent
+    CategoriaFormComponent,
+    FormaPagamentoComponent,
+    FormaPagamentoListarComponent,
+    FormaPagamentoFormComponent
   ],
   imports: [
     BrowserModule,
