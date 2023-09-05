@@ -1,13 +1,13 @@
  <!-- Multi Columns Form -->
  <div class="card">
-  <form class="descricao" style="margin: 10%;" id="descricao" name="descricao">
+  <form class="descricao" style="margin: 10%;" name="descricao">
     <div class="descricao">
       <label  class="form-label" id="forma-pagamento">Forma pagamento</label>
       <input type="text" class="form-control" id="descricao"  [(ngModel)]='descricao' name="descricao">
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-primary" style="margin: 10px;" id="salvar"[routerLink]="['/forma-pagamento/listar']" (click)="salvar()">Salvar</button>
+      <button type="button" class="btn btn-primary" style="margin: 10px;" id="salvar" (click)="salvar()">Salvar</button>
       <button type="button" class="btn btn-danger" id="cancelar" [routerLink]="['/forma-pagamento/listar']">Cancelar</button>
     </div>
   </form><!-- End Multi Columns Form -->

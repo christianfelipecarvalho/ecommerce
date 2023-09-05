@@ -30,9 +30,16 @@
               <th scope="row"><a href="#">#1</a></th>
               <td>{{ Categoria.descricao }}</td>
               <td>
-                <i class="bi bi-pencil-square" id="editar" (click)="editar(Categoria.indice)"></i>
+                <button class="btn btn-warning">
+                  <i class="bi bi-pencil-square" id="editar" (click)="editar(Categoria.indice)"></i>
+                </button>
               </td>
-              <i class="bi bi-x-circle-fill" id="excluir" (click)="excluir(Categoria.indice)"></i>
+              <td>
+                <button class="btn btn-danger">
+                  <i class="bi bi-x-circle-fill" id="excluir" (click)="excluir(Categoria.indice)"></i>
+                </button>
+
+              </td>
             </tr>
 
           </tbody>

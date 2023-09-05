@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from '../categoria.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class CategoriaFormComponent {
   public descricao:string = '';
   constructor(
       public categoria_service:CategoriaService,
-      public activated_route:ActivatedRoute
+      public activated_route:ActivatedRoute,
+      public router: Router
   ){
 
     this.activated_route.params
@@ -37,12 +38,18 @@ export class CategoriaFormComponent {
     let dados = {
       descricao:this.descricao
     };
-    if (this.indice == ''){
+
+   if (this.indice == ''){
+      if(dados.descricao == ''){
+        document.querySelector('#descricao')
+        ?.classList.add('has-error');
+        return;
+      }
       this.categoria_service.salvar(dados);
     }else{
       this.categoria_service.editar(this.indice,dados);
     }
-    //this.descricao = '';
+    this.router.navigate(['/categoria/listar/']);
   }
   exibirMensagem() {
     this.exibirMensagemSucesso = true;
