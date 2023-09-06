@@ -17,6 +17,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FormaPagamentoComponent } from './forma-pagamento/forma-pagamento.component';
 import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
+import { SubcategoriaComponent } from './subcategoria/subcategoria/subcategoria.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-f
     CategoriaFormComponent,
     FormaPagamentoComponent,
     FormaPagamentoListarComponent,
-    FormaPagamentoFormComponent
+    FormaPagamentoFormComponent,
+    SubcategoriaComponent
   ],
   imports: [
     BrowserModule,
