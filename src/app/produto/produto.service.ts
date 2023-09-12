@@ -4,14 +4,16 @@ import { FirebaseService } from '../firebase.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaService {
+export class ProdutoService {
 
   constructor(
     public firebase_service:FirebaseService
   ) { }
 
   ref(){
-    return this.firebase_service.ref().child('/categoria');
+    return this.firebase_service
+    .ref()
+    .child('/produto');
   }
 
   salvar(dados:any){
@@ -22,20 +24,20 @@ export class CategoriaService {
     return this.ref();
   }
 
-  excluir (indice:any){
+  excluir(indice:string){
     this
     .ref()
-    .child('/' +indice)
+    .child('/' + indice)
     .remove()
     .then();
   }
 
-  editar(indice:string, dados:any){
-    this.ref()
-    .child('/' + indice)
+  editar(indice:string,dados:any){
+    this.ref().child('/' + indice)
     .update(dados)
     .then();
   }
+
   async get(indice:string){
     let dado:any;
     await this.ref().orderByKey()
@@ -46,8 +48,6 @@ export class CategoriaService {
           dado = Object.values(snapshot.val())[0];
       }
     });
-
-    console.log(dado);
     return dado;
   }
 }

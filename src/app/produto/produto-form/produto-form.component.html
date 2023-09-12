@@ -1,0 +1,77 @@
+<div style="display:flex;justify-content: right;">
+  <button
+      class="btn btn-success"
+      (click)="salvar()"
+  >
+      <span class="bi bi-check"></span>
+      Salvar
+  </button>
+</div>
+<!-- Vertical Form -->
+<form class="row g-3">
+  <div class="col-12">
+      <label for="nome" class="form-label">Nome</label>
+      <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="nome"
+      name="nome"
+      id="nome"
+      >
+  </div>
+  <div class="col-12">
+      <label for="nome" class="form-label">Preço</label>
+      <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="preco"
+      name="preco"
+      id="preco"
+      >
+  </div>
+  <div class="col-12">
+      <label for="nome" class="form-label">Descrição</label>
+      <textarea
+      class="form-control"
+      [(ngModel)]="descricao"
+      name="descricao"
+      id="descricao"
+      ></textarea>
+  </div>
+  <div class="col-12">
+      <label
+          for="categoria"
+          class="form-label"
+      >Categoria</label>
+      <select
+          class="form-control"
+          [(ngModel)]="categoria"
+          name="categoria"
+          (change)="listarSubcategoria(categoria)"
+      >
+          <option
+          *ngFor="let categoria of categorias"
+          [value]="categoria.indice"
+          [innerHTML]="categoria.descricao"
+          ></option>
+      </select>
+  </div>
+  <div class="col-12">
+      <label
+      for="categoria"
+      class="form-label"
+      >Subcategoria</label>
+      <select
+          [disabled]="is_desabilidado"
+          class="form-control"
+          [(ngModel)]="subcategoria"
+          name="subcategoria"
+      >
+          <option
+              *ngFor="let subcategoria of subcategorias"
+              [value]="subcategoria.indice"
+              [innerHTML]="subcategoria.descricao"
+          ></option>
+      </select>
+  </div>
+</form><!-- Vertical Form -->

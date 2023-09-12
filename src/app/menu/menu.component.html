@@ -36,14 +36,30 @@
           </div>
           <ul id="categoria-nav" class="nav-content collapse">
             <li class="nav-item" >
-              <a href="/forma-pagamento" class="Subcategoria">
+              <a href="/subcategoria" class="Subcategoria">
                 <i class="bi bi-circle"></i><span>Subcategoria</span>
               </a>
             </li>
           </ul>
+        </li><!--categoria e subcategoria-->
+
+
+        <li class="nav-item">
+          <div
+            class="produto-nav"
+            class="nav-link nav-link-justify collapsed"
+            data-bs-toggle="collapse"
+            href="#produto-nav"
+          >
+            <a href="/produto">
+              <i style="padding-right: 20px"></i><span>Produto</span>
+            </a>
+          </div>
         </li>
+
       </ul>
     </li>
+
 
     <!-- End Components Nav -->
 
@@ -70,5 +86,32 @@
       </ul>
     </li>
     <!-- End Components forma pagamento financeiro -->
+
+    <li class="nav-item">
+      <a
+        class="nav-link collapsed"
+        data-bs-target="#controle-usuario-nav"
+        data-bs-toggle="collapse"
+        href="#"
+      >
+        <i class="bi bi-menu-button-wide"></i><span>Controle de usuários</span
+        ><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul
+        id="controle-usuario-nav"
+        class="nav-content collapse"
+        data-bs-parent="#sidebar-nav"
+      >
+        <li>
+          <a href="/forma-pagamento">
+            <i class="bi bi-circle"></i><span>Usuários</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- End Components controle de usuarios-->
+
   </ul>
+
+
 </aside>
