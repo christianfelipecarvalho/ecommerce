@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from 'src/app/categoria/categoria.service';
 import { SubcategoriaService } from 'src/app/subcategoria/subcategoria.service';
+import { ProdutoService } from '../produto.service';
 
 @Component({
   selector: 'app-produto-form',
@@ -21,7 +22,9 @@ export class ProdutoFormComponent {
   constructor(
     public categoria_service:CategoriaService,
     public subcategoria_service:SubcategoriaService,
-    public activated_route:ActivatedRoute
+    public activated_route:ActivatedRoute,
+    public produto_service:ProdutoService,
+    public router:Router
   ){
     this.listarCategoria();
     this.activated_route.params
@@ -30,13 +33,18 @@ export class ProdutoFormComponent {
         // Caso seja um registro novo
         // interronper o método
         if (params.indice == undefined) return;
-
-        this.categoria_service.ref()
+        this.produto_service.ref()
         .child('/' + params.indice)
         .on('value',(snapshot:any) => {
-          let dado:any    = snapshot.val();
-          this.indice     = params.indice;
-          this.descricao  = dado.descricao;
+          let dado:any      = snapshot.val();
+          this.indice       = params.indice;
+          this.nome         = dado.nome;
+          this.descricao    = dado.descricao;
+          this.categoria    = dado.categoria;
+          this.preco        = dado.preco;
+          this.is_desabilidado = false;
+          this.listarSubcategoria(dado.categoria);
+          this.subcategoria = dado.subcategoria;
         });
       }
     );
@@ -44,7 +52,11 @@ export class ProdutoFormComponent {
 
   salvar(){
     let dados = {
-      descricao:this.descricao
+      descricao:this.descricao,
+      nome:this.nome,
+      categoria:this.categoria,
+      preco:this.preco,
+      subcategoria:this.subcategoria
     };
 
     if (dados.descricao == ''){
@@ -52,13 +64,18 @@ export class ProdutoFormComponent {
       ?.classList.add('has-error');
       return;
     }
+    if (dados.nome == ''){
+      document.querySelector('#nome')
+      ?.classList.add('has-error');
+      return;
+    }
 
     if (this.indice == ''){
-      this.categoria_service.salvar(dados);
+      this.produto_service.salvar(dados);
     }else{
-      this.categoria_service.editar(this.indice,dados);
+      this.produto_service.editar(this.indice,dados);
     }
-    //this.descricao = '';
+    this.router.navigate(['/produto/listar/']);
   }
 
   listarCategoria(){
@@ -126,6 +143,7 @@ export class ProdutoFormComponent {
       }else{
         this.is_desabilidado = true;
       }
+
     });
   }
 }

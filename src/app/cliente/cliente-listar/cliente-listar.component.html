@@ -2,7 +2,7 @@
 <div class="card">
   <div class="card-body"></div>
   <div class="card-body" id="cabecalho">
-    <h2 style="float: left" id="titulo">Produto</h2>
+    <h2 style="float: left" id="titulo">Cliente</h2>
     <div style="float: right">
       <button type="button" class="btn btn-primary" routerLink="../form">
         Novo
@@ -19,7 +19,7 @@
       <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
-      <th scope="col">Descrição</th>
+      <th scope="col">E-mail</th>
       <th scope="col">Editar</th>
       <th scope="col">Excluir</th>
       </tr>
@@ -28,20 +28,20 @@
 
 
     <tbody align="center">
-      <tr *ngFor="let produto of dados">
+      <tr *ngFor="let cliente of dados">
           <th scope="row">1</th>
-          <td>{{ produto.nome }}</td>
-          <td>{{ produto.descricao }}</td>
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.email }}</td>
           <td>
             <button class="btn btn-warning">
               <span
                   class="bi bi-pencil-square"
-                  (click)="editar(produto.indice)"
+                  (click)="editar(cliente.indice)"
               ></span></button></td>
           <td>
             <button class="btn btn-danger">
               <span class="bi bi-trash"
-                  (click)="excluir(produto.indice)"
+                  (click)="excluir(cliente.indice)"
               ></span>
               </button>
           </td>

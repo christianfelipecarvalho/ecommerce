@@ -21,3 +21,16 @@
 .Subcategoria{
   justify-content: center !important;
 }
+/* You can add global styles to this file, and also import other style files */
+// regular style toast
+
+select
+{
+    -webkit-appearance:auto !important;
+    appearance:auto !important;
+}
+.asterisco:after
+{
+  content:" *";
+  color: red;
+}

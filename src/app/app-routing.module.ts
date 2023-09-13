@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
 import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
 import { FormaPagamentoComponent } from './forma-pagamento/forma-pagamento.component';
@@ -52,6 +54,16 @@ children:[
     {path:'listar', component:ProdutoListarComponent},
     {path:'form', component:ProdutoFormComponent},
     {path:'form/:indice', component:ProdutoFormComponent}
+  ]
+},
+{
+  path:'cliente',
+  component:ProdutoComponent,
+  children:[
+    {path:'' , redirectTo:'listar', pathMatch:'full'},
+    {path:'listar', component:ClienteListarComponent},
+    {path:'form', component:ClienteFormComponent},
+    {path:'form/:indice', component:ClienteFormComponent}
   ]
 },
 ];

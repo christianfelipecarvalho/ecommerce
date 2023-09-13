@@ -56,9 +56,4 @@ export class CategoriaListarComponent implements OnInit {
     .router
     .navigate(['/categoria/form/'+ key]);
   }
-
- // showSucess(){
- //   this.toastr.success('Operação realizada com sucesso!', 'Sucesso');
- // }
-
 }

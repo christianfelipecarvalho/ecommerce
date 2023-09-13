@@ -17,7 +17,7 @@ export class ProdutoListarComponent {
   ){}
 
   ngOnInit(): void {
-    this.categoria_service.listar()
+    this.produto_service.listar()
     .on('value',(snapshot:any) => {
 
       // Limpa variavel local com os dados
@@ -38,6 +38,7 @@ export class ProdutoListarComponent {
           // de dados
           this.dados.push({
             descricao: e.descricao,
+            nome: e.nome,
             indice: Object.keys(snapshot.val())[i]
           });
         }
@@ -45,8 +46,10 @@ export class ProdutoListarComponent {
     });
   }
 
+
+
   excluir(key:string){
-    this.categoria_service.excluir(key);
+    this.produto_service.excluir(key);
   }
 
   editar(key:string){
