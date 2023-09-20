@@ -35,19 +35,17 @@ export class FormaPagamentoFormComponent {
     let dados = {
       descricao:this.descricao
     };
-    if(this.indice == ''){
+
       if(dados.descricao == ''){
         document.querySelector('#descricao')
         ?.classList.add('has-error');
         return;
-      }
-      this.forma_pagamento_service.salvar(dados);
-
     }
     else{
+      this.forma_pagamento_service.salvar(dados);
       this.forma_pagamento_service.editar(this.indice,dados);
 
-    }
+  }
     this.router.navigate(['/forma-pagamento/listar/']);
   }
 }

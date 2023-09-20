@@ -35,4 +35,16 @@ export class FormaPagamentoService {
     .update(dados)
     .then();
   }
+  async get(indice: string) {
+		let dado: any;
+		await this.ref().orderByKey()
+			.equalTo(indice)
+			.once('value')
+			.then(function (snapshot) {
+				if (snapshot.exists()) {
+					dado = Object.values(snapshot.val())[0];
+				}
+			});
+		return dado;
+	}
 }

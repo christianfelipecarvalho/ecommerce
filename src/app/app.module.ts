@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
+import { ClienteComponent } from './cliente/cliente.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormaPagamentoFormComponent } from './forma-pagamento/forma-pagamento-form/forma-pagamento-form.component';
 import { FormaPagamentoListarComponent } from './forma-pagamento/forma-pagamento-listar/forma-pagamento-listar.component';
@@ -17,15 +20,21 @@ import { FormaPagamentoComponent } from './forma-pagamento/forma-pagamento.compo
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
+import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
+import { PedidoListarComponent } from './pedido/pedido-listar/pedido-listar.component';
+import { PedidoComponent } from './pedido/pedido.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
+import { ProdutoComponent } from './produto/produto.component';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
 import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
-import { ProdutoComponent } from './produto/produto.component';
-import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
-import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
-import { ClienteComponent } from './cliente/cliente.component';
-import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
-import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
+import { EstadoComponent } from './estado/estado.component';
+import { EstadoFormComponent } from './estado/estado-form/estado-form.component';
+import { EstadoListarComponent } from './estado/estado-listar/estado-listar.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
+import { FornecedorFormComponent } from './fornecedor/fornecedor-form/fornecedor-form.component';
+import { FornecedorListarComponent } from './fornecedor/fornecedor-listar/fornecedor-listar.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +57,16 @@ import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.
     ProdutoListarComponent,
     ClienteComponent,
     ClienteFormComponent,
-    ClienteListarComponent
+    ClienteListarComponent,
+    PedidoComponent,
+    PedidoFormComponent,
+    PedidoListarComponent,
+    EstadoComponent,
+    EstadoFormComponent,
+    EstadoListarComponent,
+    FornecedorComponent,
+    FornecedorFormComponent,
+    FornecedorListarComponent
   ],
   imports: [
     BrowserModule,

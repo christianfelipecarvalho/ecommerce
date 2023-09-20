@@ -1,0 +1,38 @@
+<div class="card">
+	<div class="col-12 pagetitle">
+        <div class="pedido-header">
+            <h1>Pedido</h1>
+        </div>
+    </div>
+	<form class="row g-3" id="form">
+		<div>
+            <label  class="form-label">Descrição</label>
+			<input type="text" class="form-control"  id="descricao"  name="descricao" [(ngModel)]="descricao"
+      >
+
+			<br>
+			<label  class="form-label">Cliente</label>
+			<select class="form-control"  name="clientes">
+				<option *ngFor="let cliente of clientes" [value]="cliente.indice" [innerHTML]="cliente.nome">
+				</option>
+			</select>
+			<br>
+            <label class="form-label">Produto</label>
+			<select class="form-control"  name="produto">
+				<option *ngFor="let produto of produtos" [value]="produto.indice" [innerHTML]="produto.nome">
+				</option>
+			</select>
+			<br>
+
+            <label class="form-label">Forma de pagamento</label>
+			<select class="form-control"  name="pagamento">
+				<option *ngFor="let pagamento of pagamentos" [value]="pagamento.indice" [innerHTML]="pagamento.descricao">
+				</option>
+			</select>
+		</div>
+	</form>
+  <div class="text-center">
+    <button type="button" class="btn btn-primary" style="margin: 10px;" id="salvarPedido" (click)="salvarPedido()">Salvar</button>
+    <button type="button" class="btn btn-danger" id="cancelar" [routerLink]="['/pedido/listar']">Cancelar</button>
+	</div>
+</div>
