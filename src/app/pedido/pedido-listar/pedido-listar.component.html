@@ -26,14 +26,14 @@
       <tbody>
           <tr *ngFor="let pedido of dados;">
               <td>{{ pedido.descricao }}</td>
-              <!--<td>{{ pedido.cliente }} </td>-->
+              <td>{{ pedido.cliente }} </td>
               <td>{{ pedido.produto }}</td>
               <td>{{ pedido.pagamento }}</td>
               <td>
-                  <span class="bi bi-pencil-square" (click)="editar"></span>
+                  <span class="bi bi-pencil-square" (click)="editarPedido(pedido.indice)"></span>
               </td>
               <td>
-                  <span class="bi bi-trash" (click)="excluir"></span>
+                  <span class="bi bi-trash" (click)="excluirPedido(pedido.indice)"></span>
               </td>
           </tr>
       </tbody>

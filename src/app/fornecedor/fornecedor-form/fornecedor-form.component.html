@@ -7,15 +7,8 @@
 
 <!-- Vertical Form -->
 <form class="row g-3">
-  <div class="col-12">
-    <label class="form-label">Estado</label>
-    <select class="form-control" [(ngModel)]="estado" name="estado">
-      <option
-        *ngFor="let estado of estados"
-        [value]="estado.indice"
-        [innerHTML]="estado.nomeEstado"
-      ></option>
-    </select>
+  <div class="col-6">
+
     <br />
     <label for="descricao" class="form-label">NomeFantasia</label>
     <input
@@ -24,6 +17,14 @@
       name="nomeFantasia"
       id="nomeFantasia"
       [(ngModel)]="nomeFantasia"
+    />
+    <label for="cnpj" class="form-label">CNPJ</label>
+    <input
+      type="text"
+      class="form-control"
+      name="cnpj"
+      id="cnpj"
+      [(ngModel)]="cnpj"
     />
 
     <label for="logadouro" class="form-label">Logadouro</label>
@@ -50,14 +51,10 @@
       id="complemento"
       [(ngModel)]="complemento"
     />
-    <label for="cnpj" class="form-label">CNPJ</label>
-    <input
-      type="text"
-      class="form-control"
-      name="cnpj"
-      id="cnpj"
-      [(ngModel)]="cnpj"
-    />
+
+
+  </div>
+  <div class="col-6" style="margin-top: 40px; padding-left: 10px;">
     <label for="bairro" class="form-label">Bairro</label>
     <input
       type="text"
@@ -90,6 +87,15 @@
       id="email"
       [(ngModel)]="email"
     />
+
+    <label class="form-label">Estado</label>
+    <select class="form-control" [(ngModel)]="estado" name="estado">
+      <option
+        *ngFor="let estado of estados"
+        [value]="estado.indice"
+        [innerHTML]="estado.nomeEstado"
+      ></option>
+    </select>
 
   </div>
 </form>

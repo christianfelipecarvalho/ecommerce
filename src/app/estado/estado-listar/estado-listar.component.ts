@@ -51,6 +51,6 @@ excluir(key:string){
 editar(key:string){
     this
     .router
-    .navigate(['/categoria/form/'+ key]);
+    .navigate(['/estado/form/'+ key]);
   }
 }

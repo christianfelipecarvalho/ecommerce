@@ -59,11 +59,11 @@ export class PedidoListarComponent implements OnInit {
 		});
 	  }
 
-	  excluir(key:string){
+	  excluirPedido(key:string){
 		this.pedido_service.excluir(key);
 	  }
 
-	  editar(key:string){
+	  editarPedido(key:string){
 		this
 		.router
 		.navigate(['/pedido/form/' + key]);
