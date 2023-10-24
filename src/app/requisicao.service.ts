@@ -14,8 +14,15 @@ export class RequisicaoService {
     return this.http.delete("http://localhost:8080" + _rota);
   }
 
-  get(_rota:string = '/'){
-    return this.http.get("http://localhost:8080" + _rota);
+  // get(_rota:string = '/'){
+  //   return this.http.get("http://localhost:8080" + _rota);
+  // }
+
+  get(_rota:string = '/',_params:any = {}){
+    return this.http.get(
+      "http://localhost:8080" + _rota,
+      {params:_params}
+    );
   }
 
   post(formData:any, rota:string = ''){

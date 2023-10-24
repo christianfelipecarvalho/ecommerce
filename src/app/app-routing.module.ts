@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaComponent } from './categoria/categoria.component';
@@ -113,6 +114,9 @@ children:[
       { path: 'form', component: FornecedorFormComponent },
       { path: 'form/:indice', component: FornecedorFormComponent }
   ]
+},
+{
+  path:'login',component:AutenticacaoComponent
 },
 ];
 

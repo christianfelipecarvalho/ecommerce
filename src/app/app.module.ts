@@ -39,6 +39,7 @@ import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
 import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
 import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     UsuarioFormComponent,
     UsuarioComponent,
     UsuarioFormComponent,
-    UsuarioListarComponent
+    UsuarioListarComponent,
+    AutenticacaoComponent
   ],
   imports: [
     BrowserModule,
