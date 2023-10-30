@@ -1,31 +1,30 @@
-<form class="row g-3">
-  <div class="col-12">
-    <label for="email" class="form-label">E-Mail</label>
-    <input
-      type="text"
-      class="form-control"
-      [(ngModel)]="email"
-      name="email"
-      id="email"
-    >
-  </div>
-  <div class="col-12">
-    <label for="senha" class="form-label">Senha</label>
-    <input
-      type="password"
-      class="form-control"
-      [(ngModel)]="senha"
-      name="senha"
-      id="senha"
-    >
-  </div>
-</form>
-<div>
-    <button
-        class="btn btn-success"
-        (click)="entrar()"
-    >
-        <span class="bi bi-check"></span>
-        Entrar
+<div class="card" style="padding: 30px;">
+  <form class="row g-3">
+    <div class="col-12">
+      <label for="email" class="form-label">E-Mail</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="email"
+        name="email"
+        id="email"
+      />
+    </div>
+    <div class="col-12">
+      <label for="senha" class="form-label">Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="senha"
+        name="senha"
+        id="senha"
+      />
+    </div>
+  </form>
+  <div style="padding-top: 15px;">
+    <button class="btn btn-success" (click)="entrar()">
+      <span class="bi bi-check"></span>
+      Entrar
     </button>
+  </div>
 </div>

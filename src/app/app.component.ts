@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AutenticacaoService } from './autenticacao/autentiacao.service';
+import { GuardService } from './service/guard.service';
 
 
 @Component({
@@ -11,18 +13,10 @@ export class AppComponent {
   title = 'ecommerce';
   public is_logged:boolean = false;
   constructor(
-    public auntenticacao_service:AutenticacaoService
+    public autenticacao_service:AutenticacaoService,
+    public router:Router,
+    public guard_service:GuardService
   ){
-
-    this.auntenticacao_service.verifyToken()
-    .subscribe({
-      next:() => {
-        console.log('Token Verificado ...');
-      },
-      error:() => {
-        console.log('Token Inválido ...');
-      }
-    });
-
+    guard_service.isLogged();
   }
 }

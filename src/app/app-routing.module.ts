@@ -22,6 +22,7 @@ import { PedidoComponent } from './pedido/pedido.component';
 import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
 import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { GuardService } from './service/guard.service';
 import { SubcategoriaFormComponent } from './subcategoria/subcategoria-form/subcategoria-form.component';
 import { SubcategoriaListarComponent } from './subcategoria/subcategoria-listar/subcategoria-listar.component';
 import { SubcategoriaComponent } from './subcategoria/subcategoria.component';
@@ -30,11 +31,14 @@ import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.
 import { UsuarioComponent } from './usuario/usuario.component';
 
 const routes: Routes = [
-  { path:'', component:HomeComponent},
-  { path:'home', component:HomeComponent},
+    { path: '', component: HomeComponent, canActivate:[GuardService]},
+    { path: 'home', component: HomeComponent,
+        canActivate:[GuardService]
+    },
   {
     path:'categoria',
     component:CategoriaComponent,
+    canActivate:[GuardService],
     children:[
       {path:'' , redirectTo:'listar', pathMatch:'full'},
       {path:'listar', component:CategoriaListarComponent},
@@ -45,6 +49,7 @@ const routes: Routes = [
   {
     path:'subcategoria',
     component:SubcategoriaComponent,
+    canActivate:[GuardService],
     children:[
       {path:'' , redirectTo:'listar', pathMatch:'full'},
       {path:'listar', component:SubcategoriaListarComponent},
@@ -53,7 +58,8 @@ const routes: Routes = [
     ]
   },
   {path:'forma-pagamento', component:FormaPagamentoComponent,
-children:[
+  canActivate:[GuardService],
+  children:[
   {path:'', redirectTo: 'listar', pathMatch:'full'},
   {path:'listar',component:FormaPagamentoListarComponent},
   {path:'form',component:FormaPagamentoFormComponent},
@@ -62,6 +68,7 @@ children:[
 {
   path:'produto',
   component:ProdutoComponent,
+  canActivate:[GuardService],
   children:[
     {path:'' , redirectTo:'listar', pathMatch:'full'},
     {path:'listar', component:ProdutoListarComponent},
@@ -72,6 +79,7 @@ children:[
 {
   path:'cliente',
   component:ProdutoComponent,
+  canActivate:[GuardService],
   children:[
     {path:'' , redirectTo:'listar', pathMatch:'full'},
     {path:'listar', component:ClienteListarComponent},
@@ -81,6 +89,7 @@ children:[
 },
 {
   path: 'pedido', component: PedidoComponent,
+  canActivate:[GuardService],
   children: [
       { path: '', redirectTo: 'listar', pathMatch: 'full' },
       { path: 'listar', component: PedidoListarComponent },
@@ -90,6 +99,7 @@ children:[
 },
 {
   path: 'estado', component: EstadoComponent,
+  canActivate:[GuardService],
   children: [
       { path: '', redirectTo: 'listar', pathMatch: 'full' },
       { path: 'listar', component: EstadoListarComponent },
@@ -99,6 +109,7 @@ children:[
 },
 {
   path: 'usuario', component: UsuarioComponent,
+  canActivate:[GuardService],
   children: [
     {path: '',redirectTo: 'listar',pathMatch: 'full' },
     {path: 'listar',component: UsuarioListarComponent },
@@ -108,6 +119,7 @@ children:[
 },
 {
   path: 'fornecedor', component: FornecedorComponent,
+  canActivate:[GuardService],
   children: [
       { path: '', redirectTo: 'listar', pathMatch: 'full' },
       { path: 'listar', component: FornecedorListarComponent },
