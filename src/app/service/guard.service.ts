@@ -9,38 +9,52 @@ import { AutenticacaoService } from '../autenticacao/autentiacao.service';
 })
 export class GuardService {
 
-  private is_logged:Subject<boolean | UrlTree> = new Subject();
+  public is_logged:Subject<boolean | UrlTree> = new Subject();
 
   constructor(
     public auth_service:AutenticacaoService,
     public router: Router
   ) {}
 
-   canActivateChild(
+  canActivate(
     childRoute: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-      return this.is_logged;
-   }
-
-   isLogged(){
+    state: RouterStateSnapshot
+  ): | Observable<boolean | UrlTree>
+  | Promise<boolean | UrlTree>
+  | boolean
+  | UrlTree {
     let _token = sessionStorage.getItem('token');
-      this.auth_service.verifyToken()
-      .subscribe(
-        (_res:any) =>{
-          if(_res){
+    if (_token == '' || _token == null || _token == undefined){
+      this.goLogin();
+    }
+    return this.is_logged;
+  }
+
+  isLogged(){
+    this.auth_service.verifyToken()
+    .subscribe(
+      {
+        next: (_res:any) => {
+          if (_res){
             this.is_logged.next(true);
-          }else{
-            this.goLogin();
           }
+        },
+        error: () => {
+          this.goError();
         }
-      );
+      }
+    );
+  }
 
-   }
-   goLogin(){
+  goLogin(){
+    this.is_logged.next(false);
     this.router.navigateByUrl('/login');
-   }
+  }
 
+  goError(){
+    /*
+      Lógica para enviar o usuário para uma página de erro
+      Semelhante a página de login. Método goLogin()
+    */
+  }
 }

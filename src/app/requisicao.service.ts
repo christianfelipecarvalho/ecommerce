@@ -7,13 +7,8 @@ import { Injectable } from '@angular/core';
 export class RequisicaoService {
 
   constructor(
-    private http: HttpClient
+    public http:HttpClient
   ) { }
-
-  del(_rota:string){
-    return this.http.delete("http://localhost:8080" + _rota);
-  }
-
 
   get(_rota:string = '/',_params:any = {}){
     return this.http.get(
@@ -22,24 +17,28 @@ export class RequisicaoService {
     );
   }
 
-  post(formData:any,rota:string = ''){
-
+  post(formData:any,_rota:string = ''){
     const httpOptions = {
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin' : '*',
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post('http://localhost:8080' + rota,formData,httpOptions);
+    return this.http.post('http://localhost:8080' + _rota,formData,httpOptions);
   }
 
-  put(formData:any, rota:string = ''){
+  del(_rota:string){
+    return this.http.delete("http://localhost:8080" + _rota);
+  }
+
+  put(formData:any,rota:string = ''){
     const httpOptions = {
       headers: new HttpHeaders({
         'Access-Control-Allow-Origin' : '*',
-        'Content-Type' : 'application/json'
+        'Content-Type': 'application/json'
       })
     };
+
     return this.http.put('http://localhost:8080/' + rota,formData,httpOptions);
   }
 }

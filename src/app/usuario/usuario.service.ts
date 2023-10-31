@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { RequisicaoService } from '../requisicao.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
   constructor(
-    private requisicao_service: RequisicaoService
+    private requisicao_service:RequisicaoService
   ) { }
 
   salvar(fd:any){
-    return this.requisicao_service.post(fd,'usuario');
+    return this.requisicao_service.post(fd,'/usuario/salvar');
   }
 
-  editar(fd:any, id:number){
-    return this.requisicao_service.put(fd,'usuario/' + id);
+  editar(fd:any,id:number){
+    return this.requisicao_service.put(fd,'/usuario/' + id);
   }
 
   load(id:number){
@@ -30,7 +31,4 @@ export class UsuarioService {
     return this.requisicao_service.del('/usuario/'+_id);
   }
 
-  get(){
-    this.requisicao_service.get();
-  }
 }
